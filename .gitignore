@@ -56,3 +56,7 @@ build/
 .gradle/
 **/.gradle/
 
+
+.env*
+*.env
+

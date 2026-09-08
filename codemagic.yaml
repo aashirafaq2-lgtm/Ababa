@@ -21,7 +21,7 @@ workflows:
           flutter packages pub get
       - name: Generate App Icons
         script: |
-          flutter pub run flutter_launcher_icons
+          dart run flutter_launcher_icons
       - name: Install CocoaPods
         script: |
           find . -name "Podfile" -execdir pod install \;
@@ -29,7 +29,8 @@ workflows:
         script: |
           flutter build ipa --release \
             --build-name=1.0.1 \
-            --build-number=2
+            --build-number=3 \
+            --export-options-plist=$CM_EXPORT_OPTIONS_PATH
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild.log
