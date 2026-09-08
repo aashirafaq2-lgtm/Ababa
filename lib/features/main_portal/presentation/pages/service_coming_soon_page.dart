@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../domain/models/china_box_localization.dart';
+import 'package:ahmed_baba/features/main_portal/my_china_box/domain/models/china_box_localization.dart';
 import '../widgets/service_3d_icons.dart';
 
 class ServiceComingSoonPage extends StatefulWidget {
