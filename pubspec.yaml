@@ -75,3 +75,11 @@ flutter:
     - assets/
 
 
+
+
+flutter_launcher_icons:
+  android: false
+  ios: true
+  remove_alpha_ios: true
+  image_path: 'assets/branding/app_icon.png'
+
