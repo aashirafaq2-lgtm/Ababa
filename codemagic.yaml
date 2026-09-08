@@ -1,0 +1,52 @@
+workflows:
+  ios-release:
+    name: A.BABA iOS Release (App Store / TestFlight)
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    integrations:
+      app_store_connect: Yalla Driver Key
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.hamakhorshed.ababa
+    scripts:
+      - name: Get Flutter packages
+        script: |
+          flutter packages pub get
+      - name: Install CocoaPods
+        script: |
+          find . -name "Podfile" -execdir pod install \;
+      - name: Build Flutter IPA
+        script: |
+          # Create ExportOptions.plist manually
+          cat > /tmp/ExportOptions.plist << 'EOF'
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+            <key>method</key>
+            <string>app-store</string>
+            <key>teamID</key>
+            <string>585FVS6NFQ</string>
+            <key>uploadSymbols</key>
+            <true/>
+            <key>compileBitcode</key>
+            <false/>
+            <key>signingStyle</key>
+            <string>automatic</string>
+          </dict>
+          </plist>
+          EOF
+          flutter build ipa --release --build-name=1.0.0 --build-number=1 --export-options-plist=/tmp/ExportOptions.plist
+      - name: Upload to TestFlight
+        script: |
+          IPA_FILE=$(find build/ios/ipa -name "*.ipa" | head -n 1)
+          if [ -n "$IPA_FILE" ]; then
+            app-store-connect publish --path "$IPA_FILE" || true
+          fi
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild.log
