@@ -21,7 +21,6 @@ workflows:
           find . -name "Podfile" -execdir pod install \;
       - name: Build Flutter IPA
         script: |
-          # Create ExportOptions.plist manually
           cat > /tmp/ExportOptions.plist << 'EOF'
           <?xml version="1.0" encoding="UTF-8"?>
           <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -35,8 +34,11 @@ workflows:
             <true/>
             <key>compileBitcode</key>
             <false/>
-            <key>signingStyle</key>
-            <string>automatic</string>
+            <key>provisioningProfiles</key>
+            <dict>
+              <key>com.hamakhorshed.ababa</key>
+              <string>Ababa</string>
+            </dict>
           </dict>
           </plist>
           EOF
