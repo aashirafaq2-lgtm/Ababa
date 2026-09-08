@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "github.com/ahmedbaba/contracts/order";
+
+service OrderService {
+  rpc CreateOrder(CreateOrderRequest) returns (OrderResponse);
+  rpc GetOrderEscrowStatus(OrderRequest) returns (EscrowStatusResponse);
+}
+
+message CreateOrderRequest {
+  string buyer_id = 1;
+  string supplier_id = 2;
+  double amount = 3;
+}
+
+message OrderResponse {
+  string order_id = 1;
+  string status = 2;
+}
+
+message OrderRequest {
+  string order_id = 1;
+}
+
+message EscrowStatusResponse {
+  string status = 1;
+  double locked_amount = 2;
+  bool can_release = 3;
+}

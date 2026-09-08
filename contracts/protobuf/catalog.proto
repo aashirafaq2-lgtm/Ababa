@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "github.com/ahmedbaba/contracts/catalog";
+
+service CatalogService {
+  rpc SearchProducts(SearchRequest) returns (SearchResponse);
+  rpc SyncFrom1688(SyncRequest) returns (SyncResponse);
+}
+
+message SearchRequest {
+  string query = 1;
+  int32 limit = 2;
+}
+
+message SearchResponse {
+  repeated ProductItem products = 1;
+}
+
+message ProductItem {
+  string id = 1;
+  string title = 2;
+  double price = 3;
+  string image_url = 4;
+}
+
+message SyncRequest {
+  string external_id = 1;
+}
+
+message SyncResponse {
+  bool success = 1;
+}

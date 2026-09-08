@@ -1,0 +1,17 @@
+server:
+  port: "8080"
+  grpcPort: "50051"
+  env: "production"
+
+database:
+  dsn: "host=postgres user=admin password=admin dbname=ahmedbaba_auth port=5432 sslmode=disable"
+
+redis:
+  addr: "redis:6379"
+  password: ""
+  db: 0
+
+auth:
+  jwtSecret: "ahmedbaba_enterprise_secret_2024"
+  accessTokenTtl: 15
+  refreshTokenTtl: 720

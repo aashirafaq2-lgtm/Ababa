@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ahmedbaba-api-gateway
+  namespace: production
+  labels:
+    app: ahmedbaba-gateway
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ahmedbaba-gateway
+  template:
+    metadata:
+      labels:
+        app: ahmedbaba-gateway
+    spec:
+      containers:
+      - name: gateway-engine
+        image: registry.ahmedbaba.com/api-gateway:latest
+        ports:
+        - containerPort: 5000
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "500m"
+          limits:
+            memory: "1Gi"
+            cpu: "1000m"
+        readinessProbe:
+          httpGet:
+            path: /v1/products/health
+            port: 5000
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        env:
+        - name: DATABASE_URL
+          valueFrom:
+            secretKeyRef:
+              name: db-secrets
+              key: url
+
+---
+
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: ahmedbaba-hpa
+  namespace: production
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: ahmedbaba-api-gateway
+  minReplicas: 3
+  maxReplicas: 30
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 75

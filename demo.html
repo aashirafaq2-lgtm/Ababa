@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AhmedBaba | Global B2B Source</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF6600;
+            --secondary: #0066FF;
+            --bg: #F2F2F2;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: var(--bg);
+            color: #333;
+            overflow-x: hidden;
+        }
+        /* Glassmorphism Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 102, 0, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+        .search-bar {
+            flex: 1;
+            margin: 0 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            padding: 10px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+        /* Banner Section */
+        .hero {
+            height: 200px;
+            background: linear-gradient(45deg, #FF6600, #FF8833);
+            margin: 15px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            padding: 0 30px;
+            color: white;
+            animation: fadeIn 1s ease-out;
+        }
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            padding: 15px;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .card-img {
+            height: 150px;
+            background: #eee;
+            position: relative;
+        }
+        .badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #FFF3E0;
+            color: #E65100;
+            padding: 4px 8px;
+            font-size: 10px;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+        .card-body { padding: 12px; }
+        .price { color: var(--primary); font-weight: 900; font-size: 18px; margin: 8px 0; }
+        /* Shimmer Animation */
+        @keyframes shimmer {
+            0% { background-position: -468px 0; }
+            100% { background-position: 468px 0; }
+        }
+        .shimmer {
+            background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+            background-size: 800px 104px;
+            animation: shimmer 1.5s infinite linear;
+        }
+        /* Verified Badge */
+        .verified {
+            color: var(--secondary);
+            font-size: 10px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">AhmedBaba</div>
+        <div class="search-bar">
+            <span>Search global machinery...</span>
+        </div>
+        <div style="font-size: 20px;">🛒</div>
+    </header>
+
+    <div class="hero">
+        <div>
+            <h1 style="margin:0; font-size: 32px;">B2B EXPO 2026</h1>
+            <p>Direct Factory Sourcing from Shenzhen</p>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <div class="card-img">
+                <div class="badge">Ready to Ship</div>
+            </div>
+            <div class="card-body">
+                <div style="font-size: 12px; height: 32px; overflow: hidden;">Custom Precision Aluminum CNC Milling Parts</div>
+                <div class="price">$4.85 - $5.50</div>
+                <div class="verified">✓ Verified Supplier</div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img shimmer"></div>
+            <div class="card-body">
+                <div style="background:#eee; height:12px; margin-bottom:8px;"></div>
+                <div style="background:#eee; height:18px; width:60%;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: black; color: white; padding: 12px 30px; border-radius: 30px; font-weight: bold; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
+        RFQ: Get Quotations
+    </div>
+</body>
+</html>

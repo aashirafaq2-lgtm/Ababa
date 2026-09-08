@@ -1,0 +1,16 @@
+{
+    "@@locale": "en",
+    "appTitle": "Ababa",
+    "@appTitle": {
+        "description": "Main application name"
+    },
+    "searchHint": "Search global suppliers & products...",
+    "tradeAssurance": "Trade Assurance",
+    "verifiedSupplier": "Verified Supplier",
+    "startOrder": "Start Order",
+    "sendInquiry": "Send Inquiry",
+    "minOrder": "Min. order",
+    "disputeCenter": "Dispute Center",
+    "shippingStatus": "Shipping Status",
+    "paymentSecured": "Payment Secured (Escrow)"
+}

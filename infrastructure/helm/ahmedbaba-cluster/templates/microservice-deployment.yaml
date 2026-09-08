@@ -1,0 +1,47 @@
+{{- range $service := .Values.microservices }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $service.name }}
+  labels:
+    app: {{ $service.name }}
+spec:
+  replicas: {{ $service.replicas | default 3 }}
+  selector:
+    matchLabels:
+      app: {{ $service.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ $service.name }}
+    spec:
+      containers:
+      - name: {{ $service.name }}
+        image: "{{ $service.image }}:{{ $service.tag }}"
+        ports:
+        - containerPort: {{ $service.port }}
+        env:
+        {{- range $env := $service.env }}
+        - name: {{ $env.name }}
+          value: {{ $env.value | quote }}
+        {{- end }}
+        resources:
+          limits:
+            cpu: 500m
+            memory: 512Mi
+          requests:
+            cpu: 200m
+            memory: 256Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ $service.name }}
+spec:
+  ports:
+  - port: {{ $service.port }}
+    targetPort: {{ $service.port }}
+  selector:
+    app: {{ $service.name }}
+{{- end }}

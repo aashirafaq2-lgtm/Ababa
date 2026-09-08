@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  auth-service:
+    build: .
+    ports:
+      - "8080:8080"
+      - "50051:50051"
+    environment:
+      - SERVER_PORT=8080
+      - DATABASE_DSN=host=postgres user=admin password=admin dbname=ahmedbaba_auth port=5432 sslmode=disable
+    depends_on:
+      - postgres
+      - redis
+
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=ahmedbaba_auth
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"

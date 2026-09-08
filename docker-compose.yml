@@ -1,0 +1,84 @@
+version: '3.8'
+
+services:
+  # --- DATABASES ---
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: ahmedbaba_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  mongodb:
+    image: mongo:6.0
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password123
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  redis:
+    image: redis:7.0-alpine
+    ports:
+      - "6379:6379"
+
+  # --- MICROSERVICES ---
+  catalog-service:
+    build:
+      context: ./services/catalog_service
+      dockerfile: Dockerfile
+    environment:
+      DB_URI: "mongodb://admin:password123@mongodb:27017"
+      REDIS_ADDR: "redis:6379"
+      ONE_SIX_EIGHT_EIGHT_API_KEY: "${ONE_SIX_EIGHT_EIGHT_API_KEY}"
+    depends_on:
+      - mongodb
+      - redis
+    ports:
+      - "50051:50051" # gRPC
+
+  order-service:
+    build:
+      context: ./services/order_service
+      dockerfile: Dockerfile
+    environment:
+      DATABASE_URL: "postgres://admin:password123@postgres:5432/ahmedbaba_db"
+      STRIPE_SECRET_KEY: "${STRIPE_SECRET_KEY}"
+    depends_on:
+      - postgres
+    ports:
+      - "50052:50051"
+
+  api-gateway:
+    build:
+      context: ./apps/api_gateway
+      dockerfile: Dockerfile
+    environment:
+      CATALOG_SERVICE_ADDR: "catalog-service:50051"
+      ORDER_SERVICE_ADDR: "order-service:50051"
+      JWT_SECRET: "b2b_secret_key_99"
+    depends_on:
+      - catalog-service
+      - order-service
+    ports:
+      - "8080:8080" # REST/GraphQL Entry Point
+
+  # --- WEB APPLICATIONS ---
+  admin-panel:
+    build:
+      context: ./apps/admin_panel_web
+      dockerfile: Dockerfile
+    environment:
+      NEXT_PUBLIC_API_URL: "http://localhost:8080"
+    ports:
+      - "3000:3000"
+
+volumes:
+  postgres_data:
+  mongo_data:

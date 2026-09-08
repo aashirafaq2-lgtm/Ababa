@@ -1,0 +1,50 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "AhmedBaba B2B API Gateway",
+        "description": "Orchestration API for Global Trade, Escrow, and 1688 Syncing",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/v1/search": {
+            "get": {
+                "summary": "Search 1688 & Internal Catalog",
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns matching B2B products with MoQs"
+                    }
+                }
+            }
+        },
+        "/api/v1/orders/pay": {
+            "post": {
+                "summary": "Initiate Escrow Payment",
+                "responses": {
+                    "202": {
+                        "description": "Order successfully locked in Escrow"
+                    }
+                }
+            }
+        },
+        "/api/v1/rfq/submit": {
+            "post": {
+                "summary": "Post Sourcing Request",
+                "responses": {
+                    "201": {
+                        "description": "RFQ successfully broadcasted to suppliers"
+                    }
+                }
+            }
+        }
+    }
+}
