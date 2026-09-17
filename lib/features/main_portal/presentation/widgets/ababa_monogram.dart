@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// Displays the official A.BABA / Alibaba brand logo from the original project asset.
+/// Displays the official A.BABA brand emblem.
 /// Uses assets/branding/logo.png — the real, original brand asset.
 /// The [size] parameter controls the rendered width/height.
 class ABabaMonogram extends StatelessWidget {

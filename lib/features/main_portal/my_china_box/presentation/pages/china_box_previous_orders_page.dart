@@ -148,8 +148,8 @@ const _kOrdersData = [
     orderId: '#AB-2505122',
     productNameAr: 'باور بانك 20000mAh',
     productNameEn: '20000mAh Power Bank',
-    siteNameAr: 'SHEIN',
-    siteNameEn: 'SHEIN',
+    siteNameAr: 'أزياء وماركات',
+    siteNameEn: 'Fashion & Retail',
     siteType: 'shein',
     quantity: 1,
     dateAr: '19 مايو 2025 - 10:10 ص',
@@ -931,7 +931,7 @@ class _ChinaBoxPreviousOrdersPageState
 
                   const SizedBox(height: 3),
 
-                  // Site row: الموقع: الصين / أمريكا / تركيا / SHEIN
+                  // Site row: الموقع: الصين / أمريكا / تركيا / أزياء وماركات
                   Row(
                     children: [
                       Flexible(
@@ -1219,7 +1219,7 @@ class _ChinaBoxPreviousOrdersPageState
         ),
       );
     }
-    // SHEIN or generic
+    // Fashion & Retail or generic
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
       decoration: BoxDecoration(

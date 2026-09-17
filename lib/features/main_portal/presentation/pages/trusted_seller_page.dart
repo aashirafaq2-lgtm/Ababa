@@ -14,7 +14,7 @@ class _TrustedSellerPageState extends State<TrustedSellerPage> {
   static const Color _orange = Color(0xFFFF6B00);
   static const Color _gold = Color(0xFFD97706);
 
-  final _storeUrlController = TextEditingController(text: 'https://shop146829482.1688.com');
+  final _storeUrlController = TextEditingController(text: 'https://factory-direct.com/store/146829482');
   final _companyNameController = TextEditingController(text: 'Zhejiang Superb Smart Home Appliance Co., Ltd.');
   final _usccCodeController = TextEditingController(text: '91330782MA28XXXX99');
 
@@ -184,7 +184,7 @@ class _TrustedSellerPageState extends State<TrustedSellerPage> {
                         TextField(
                           controller: _storeUrlController,
                           decoration: InputDecoration(
-                            labelText: isRtl ? 'رابط متجر 1688 / Taobao / Alibaba' : '1688 / Taobao / Alibaba Store URL',
+                            labelText: isRtl ? 'رابط المتجر أو المصنع' : 'Supplier / Store Web URL',
                             prefixIcon: const Icon(Icons.link_rounded, color: _gold),
                             border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
                           ),
@@ -283,7 +283,7 @@ class _TrustedSellerPageState extends State<TrustedSellerPage> {
                     const SizedBox(height: 18),
                   ],
 
-                  // ── Directory of Alibaba / Ababa Certified Factories
+                  // ── Directory of A.BABA Certified Factories
                   Text(isRtl ? 'دليل المصانع المعتمدة والمفحوصة ميدانياً' : 'Audited & Certified Supplier Network',
                       style: const TextStyle(fontFamily: 'Inter', fontSize: 14, fontWeight: FontWeight.w800, color: Color(0xFF1E293B))),
                   const SizedBox(height: 10),

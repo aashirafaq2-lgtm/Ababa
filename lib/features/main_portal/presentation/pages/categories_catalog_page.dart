@@ -230,7 +230,7 @@ class _CategoriesCatalogPageState extends State<CategoriesCatalogPage> {
                             final sub = subcats[sIdx];
                             return GestureDetector(
                               onTap: () {
-                                // Open Chinese Alibaba or Product Sourcing directly for this subcategory!
+                                // Open Wholesale Market or Product Sourcing directly for this subcategory!
                                 Navigator.of(context).push(
                                   MaterialPageRoute(builder: (_) => const SplashViewport()),
                                 );

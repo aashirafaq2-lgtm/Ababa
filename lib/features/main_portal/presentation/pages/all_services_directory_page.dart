@@ -36,8 +36,8 @@ class _AllServicesDirectoryPageState extends State<AllServicesDirectoryPage> {
         final allServices = [
           {
             'id': 1,
-            'title': isRtl ? 'سوق علي بابا الصيني' : 'Chinese Alibaba Market',
-            'desc': isRtl ? 'تصفح ملايين المنتجات من المصانع الصينية بأسعار الجملة' : 'Millions of wholesale factory products direct from China',
+            'title': isRtl ? 'سوق الجملة المباشر' : 'Direct Wholesale Market',
+            'desc': isRtl ? 'تصفح ملايين المنتجات من المصانع بأسعار الجملة' : 'Millions of wholesale factory products from verified suppliers',
             'icon': Icons.storefront_rounded,
             'color': const Color(0xFFFF6B00),
             'page': const SplashViewport(),

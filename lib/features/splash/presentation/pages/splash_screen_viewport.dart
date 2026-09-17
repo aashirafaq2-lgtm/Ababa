@@ -135,7 +135,7 @@ class _SplashViewportState extends State<SplashViewport> with SingleTickerProvid
             left: 0, right: 0,
             child: Center(
               child: Text(
-                'ALB POWERED ECOSYSTEM',
+                'A.BABA GLOBAL ECOSYSTEM',
                 style: AhmedBabaTokens.labelSmall.copyWith(
                   fontSize: 8,
                   fontWeight: FontWeight.w900,

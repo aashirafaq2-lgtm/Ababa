@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AhmedBabaTokens {
-  // --- ALIBABA OFFICIAL COLOR PALETTE ---
+  // --- A.BABA OFFICIAL COLOR PALETTE ---
   static const Color primary = Color(0xFFFF6600); // The "Trade Orange"
   static const Color secondary = Color(0xFF0066CC); // The "Link Blue"
   static const Color accent = Color(0xFFFF9900); // Highlight Orange
@@ -20,7 +20,7 @@ class AhmedBabaTokens {
   static const Color warning = Color(0xFFFF9500); // Warning Amber
 
   // --- TYPOGRAPHY (Pixel Perfect Inter/Roboto Blend) ---
-  // Alibaba uses a custom sans-serif, Inter is the closest open-source match.
+  // Inter typography system
   
   static TextStyle get displayLarge => GoogleFonts.inter(
     fontSize: 24, fontWeight: FontWeight.w900, color: textPrimary, letterSpacing: -0.8);

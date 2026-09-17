@@ -16,7 +16,7 @@ class _LocalizationSettingsPageState extends State<LocalizationSettingsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, // Alibaba uses pure white for settings
+      backgroundColor: Colors.white, // Settings page styling
       appBar: AppBar(
         title: const Text('Ship to & Currency', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
         backgroundColor: Colors.white,

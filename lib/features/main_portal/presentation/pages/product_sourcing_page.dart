@@ -16,7 +16,7 @@ class _ProductSourcingPageState extends State<ProductSourcingPage> {
 
   final _productNameController = TextEditingController(text: 'Custom Wireless Mechanical Keyboard');
   final _specsController = TextEditingController(text: 'RGB backlit, hot-swappable switches, Arabic/English laser engraved keycaps, 500 units.');
-  final _refUrlController = TextEditingController(text: 'https://detail.1688.com/offer/7123456789.html');
+  final _refUrlController = TextEditingController(text: 'https://supplier-portal.com/product/7123456789');
   final _targetPriceController = TextEditingController(text: '18.50');
   final _quantityController = TextEditingController(text: '500');
 
@@ -227,7 +227,7 @@ class _ProductSourcingPageState extends State<ProductSourcingPage> {
                         TextField(
                           controller: _refUrlController,
                           decoration: InputDecoration(
-                            labelText: isRtl ? 'رابط المنتج من 1688 / Taobao / Alibaba (إن وجد)' : 'Reference URL (1688 / Taobao / Alibaba)',
+                            labelText: isRtl ? 'رابط المنتج من المنصات التجارية (إن وجد)' : 'Product Reference URL (Optional)',
                             prefixIcon: const Icon(Icons.link_rounded, color: _purple),
                             border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
                           ),

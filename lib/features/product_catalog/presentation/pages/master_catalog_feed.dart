@@ -43,7 +43,7 @@ class _MasterCatalogFeedState extends State<MasterCatalogFeed> with SingleTicker
       body: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: [
-          _buildAlibabaAppBar(),
+          _buildCatalogAppBar(),
           SliverToBoxAdapter(child: _buildMainBanner()),
           SliverToBoxAdapter(child: _buildQuickActionGrid()),
           SliverToBoxAdapter(child: _buildTopRankingSection()),
@@ -54,7 +54,7 @@ class _MasterCatalogFeedState extends State<MasterCatalogFeed> with SingleTicker
     );
   }
 
-  Widget _buildAlibabaAppBar() {
+  Widget _buildCatalogAppBar() {
     return SliverAppBar(
       floating: true,
       pinned: true,

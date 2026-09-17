@@ -1,6 +1,6 @@
 name: ahmed_baba
-description: Enterprise B2B Global Trade Infrastructure. High-fidelity Alibaba/1688 Ecosystem Clone.
-version: 1.0.0+1
+description: A.BABA Enterprise B2B Global Trade & Direct Sourcing Infrastructure.
+version: 1.0.1+4
 publish_to: 'none'
 
 environment:

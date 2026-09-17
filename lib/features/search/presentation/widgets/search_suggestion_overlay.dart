@@ -21,7 +21,7 @@ class SearchSuggestionOverlay extends StatelessWidget {
             children: [
               const Icon(Icons.search, size: 18, color: Colors.grey),
               const SizedBox(width: 8),
-              const Expanded(child: TextField(autofocus: true, decoration: InputDecoration(hintText: 'Search 1688 products...', border: InputBorder.none, hintStyle: TextStyle(fontSize: 13)))),
+              const Expanded(child: TextField(autofocus: true, decoration: InputDecoration(hintText: 'Search wholesale products...', border: InputBorder.none, hintStyle: TextStyle(fontSize: 13)))),
             ],
           ),
         ),

@@ -109,7 +109,7 @@ class _MainHomeScreenState extends State<MainHomeScreen>
 
   // ─── Navigation ───────────────────────────────────────────────────────────
 
-  void _openChineseAlibaba() {
+  void _openWholesaleMarket() {
     Navigator.of(context).push(
       PageRouteBuilder(
         pageBuilder: (context, animation, secondaryAnimation) =>
@@ -713,7 +713,7 @@ class _MainHomeScreenState extends State<MainHomeScreen>
         'num': 1,
         'title': loc.tr('svc_1'),
         'icon': const Service3DIcon(id: 1),
-        'onTap': _openChineseAlibaba,
+        'onTap': _openWholesaleMarket,
       },
       {
         'num': 2,

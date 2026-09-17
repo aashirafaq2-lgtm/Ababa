@@ -1,7 +1,7 @@
 # AhmedBaba E-commerce Platform
 **Global B2B Trade Ecosystem - Premium 1688 Clone**
 
-AhmedBaba is an enterprise-grade B2B e-commerce platform built to completely mimic the sophisticated supplychain, catalog, and escrow structures of Alibaba/1688.
+A.BABA is an enterprise-grade B2B e-commerce platform built with sophisticated supplychain, catalog, and escrow structures for global trade.
 
 ## System Architecture
 
@@ -9,7 +9,7 @@ The ecosystem relies on three distinct layers ensuring massive scalability and f
 
 1. **Frontend Flutter Mobile Application (Client Layer)**
    - **Framework:** Flutter (Dart)
-   - **UI/UX Strategy:** 100% high-fidelity clone of Alibaba with features like Master Data Feeds, Verified Badge Badges, Bulk Tiered Pricing, and RFQ generation.
+   - **UI/UX Strategy:** High-fidelity B2B commerce platform with features like Master Data Feeds, Verified Badge Badges, Bulk Tiered Pricing, and RFQ generation.
    - **State Management:** BLoC (Business Logic Component).
    - **Routing:** Deep nesting, Auth-protected shells.
 

@@ -28,7 +28,7 @@ class _LiveSearchPageState extends State<LiveSearchPage> {
           autofocus: true,
           style: const TextStyle(color: Colors.white),
           decoration: const InputDecoration(
-            hintText: 'Search 1688 products...',
+            hintText: 'Search wholesale products...',
             hintStyle: TextStyle(color: Colors.white70),
             border: InputBorder.none,
           ),
@@ -68,7 +68,7 @@ class _LiveSearchPageState extends State<LiveSearchPage> {
               },
             );
           }
-          return const Center(child: Text('Search for products from 1688'));
+          return const Center(child: Text('Search for wholesale products'));
         },
       ),
     );

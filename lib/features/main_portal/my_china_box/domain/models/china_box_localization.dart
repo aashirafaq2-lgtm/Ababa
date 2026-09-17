@@ -123,8 +123,8 @@ class ChinaBoxLocalization extends ChangeNotifier {
     },
     // 10 Main Services
     'svc_1': {
-      'en': 'Chinese\nAlibaba',
-      'ar': 'علي بابا\nالصيني',
+      'en': 'Wholesale\nMarket',
+      'ar': 'سوق\nالجملة',
     },
     'svc_2': {
       'en': 'My China\nBox',

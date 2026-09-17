@@ -64,7 +64,7 @@ class AhmedBabaApp extends StatelessWidget {
             // New Main A.BABA Portal routes
             '/portal_splash': (_) => const PortalSplashScreen(),
             '/main_home': (_) => const MainHomeScreen(),
-            // Existing untouched Alibaba routes
+            // Legacy catalog & direct routes
             '/splash': (_) => const SplashViewport(),
             '/login': (_) => const LoginPage(),
             '/home': (_) => const HomeShell(),

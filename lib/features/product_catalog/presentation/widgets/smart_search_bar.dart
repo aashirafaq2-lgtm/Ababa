@@ -54,7 +54,7 @@ class _SmartSearchBarState extends State<SmartSearchBar> {
               widget.onSearch(q);
             },
             decoration: InputDecoration(
-              hintText: 'Search 1688 factories & products...',
+              hintText: 'Search wholesale factories & products...',
               hintStyle: TextStyle(color: AhmedBabaTokens.textSecondary, fontSize: 14),
               prefixIcon: Icon(Icons.search, color: AhmedBabaTokens.primary),
               suffixIcon: _controller.text.isNotEmpty

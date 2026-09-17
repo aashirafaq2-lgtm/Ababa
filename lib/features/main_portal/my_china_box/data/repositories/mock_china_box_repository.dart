@@ -182,10 +182,10 @@ class MockChinaBoxRepository implements ChinaBoxRepository {
     ),
     DestinationCountryOption(
       id: 'dest_shein',
-      nameEn: 'SHEIN / Regional Logistics Hub',
-      nameAr: 'مركز شي إن اللوجستي الإقليمي',
+      nameEn: 'International Logistics Hub',
+      nameAr: 'مركز الخدمات اللوجستية الدولي',
       flagEmoji: '📦',
-      code: 'SHN',
+      code: 'INT',
     ),
   ];
 
